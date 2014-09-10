@@ -1,0 +1,21 @@
+﻿delete 
+	src/main/java 
+		com.company.project
+	src/test/java
+		com.company.project
+	src/main/webapp
+		pages/
+
+modify dialect=MysqlDialect
+modify datasource=MysqlDataSource
+
+modify pom-archetype.xml version
+
+archetype生成项目命令:
+	mvn archetype:generate -DarchetypeCatalog=http://dev.game.yy.com/repos/archetype/	--远程
+	mvn archetype:generate -DarchetypeCatalog=local						--本地
+
+ftp://dev.game.yy.com:1980
+ciftp 
+!@#!QAZ@WSX#EDC
+http://dev.game.yy.com/upload/
