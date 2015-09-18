@@ -26,18 +26,18 @@
 			
 	  	<!-- rapid begn -->
 		<!-- 代码生成器核心引擎 -->
-		<dependency>
-		  <groupId>com.googlecode.rapid-framework</groupId>
-		  <artifactId>rapid-generator</artifactId>
-		  <scope>test</scope>        
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		  <groupId>com.googlecode.rapid-framework</groupId> -->
+<!-- 		  <artifactId>rapid-generator</artifactId> -->
+<!-- 		  <scope>test</scope>         -->
+<!-- 		</dependency> -->
 		
 		<!-- 代码生成器扩展包 -->
-		<dependency>
-		  <groupId>com.googlecode.rapid-framework</groupId>
-		  <artifactId>rapid-generator-ext</artifactId>
-		  <scope>test</scope>           
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		  <groupId>com.googlecode.rapid-framework</groupId> -->
+<!-- 		  <artifactId>rapid-generator-ext</artifactId> -->
+<!-- 		  <scope>test</scope>            -->
+<!-- 		</dependency> -->
 	  	<!-- rapid end -->
 	  	
 	  	

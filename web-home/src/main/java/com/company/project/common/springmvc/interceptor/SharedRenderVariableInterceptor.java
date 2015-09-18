@@ -13,6 +13,9 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.github.rapid.common.web.httpinclude.HttpInclude;
+import com.github.rapid.common.web.scope.Flash;
+
 /**
  * 拦截器,用于存放渲染视图时需要的的共享变量
  * @author badqiu

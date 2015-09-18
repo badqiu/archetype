@@ -50,39 +50,39 @@
 <dependencyManagement>
   <dependencies>
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-util</artifactId>
-	  	<version>1.0.10</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-util</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-web</artifactId>
-	  	<version>1.0.2</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-web</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>	
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-jdbc</artifactId>
-	  	<version>1.0.2</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-jdbc</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>	
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-mvc</artifactId>
-	  	<version>1.1.2</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-mvc</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-test</artifactId>
-	  	<version>1.0</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-test</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>	
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-log</artifactId>
-	  	<version>1.0.4</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-log</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>	
 	<dependency>
-		<groupId>com.duowan.common</groupId>
-		<artifactId>duowan-common-rpc</artifactId>
-	  	<version>1.1.4</version>        
+		<groupId>com.github.rapid.common</groupId>
+		<artifactId>rapid-common-rest</artifactId>
+	  	<version>1.0.0</version>        
 	</dependency>
 	
   	<!-- rapid generator begn -->
@@ -200,12 +200,7 @@
 		<groupId>cglib</groupId>
 		<artifactId>cglib-nodep</artifactId>
 		<version>2.2</version>
-	</dependency>
-	<dependency>
-	    <groupId>apache-oro</groupId>
-	    <artifactId>jakarta-oro</artifactId>
-	    <version>2.0.8</version>
-	</dependency>			
+	</dependency>		
 	<!-- spring end -->
 
 	<!-- datasource -->

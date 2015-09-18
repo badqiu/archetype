@@ -20,14 +20,14 @@ import org.springframework.jdbc.support.incrementer.AbstractSequenceMaxValueIncr
 import org.springframework.jdbc.support.incrementer.DB2SequenceMaxValueIncrementer;
 import org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer;
 
-import com.duowan.common.beanutils.BeanUtils;
-import com.duowan.common.beanutils.PropertyUtils;
-import com.duowan.common.jdbc.dialect.Dialect;
-import com.duowan.common.jdbc.support.OffsetLimitResultSetExtractor;
-import com.duowan.common.util.SqlRemoveUtils;
-import com.duowan.common.util.page.Page;
-import com.duowan.common.util.page.PageQuery;
-import com.duowan.common.util.page.Paginator;
+import com.github.rapid.common.beanutils.BeanUtils;
+import com.github.rapid.common.beanutils.PropertyUtils;
+import com.github.rapid.common.jdbc.dialect.Dialect;
+import com.github.rapid.common.jdbc.support.OffsetLimitResultSetExtractor;
+import com.github.rapid.common.util.SqlRemoveUtil;
+import com.github.rapid.common.util.page.Page;
+import com.github.rapid.common.util.page.PageQuery;
+import com.github.rapid.common.util.page.Paginator;
 /**
  * Spring的JDBC基类
  * @author badqiu
@@ -106,7 +106,7 @@ public abstract class BaseSpringJdbcDao extends JdbcDaoSupport {
 	}
 	
 	private int queryTotalItems(String querySql,Map paramMap) {
-		String removedOrderByQuery = "select count(*) from ( " + SqlRemoveUtils.removeOrders(querySql) + " ) as c ";//FIXME 未处理group by的 select count(*) from (subquery)
+		String removedOrderByQuery = "select count(*) from ( " + SqlRemoveUtil.removeOrders(querySql) + " ) as c ";//FIXME 未处理group by的 select count(*) from (subquery)
 		return getNamedParameterJdbcTemplate().queryForInt(removedOrderByQuery,new MapSqlParameterSource((Map)paramMap));
 	}
 	

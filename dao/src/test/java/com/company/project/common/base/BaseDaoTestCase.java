@@ -1,17 +1,9 @@
 package com.company.project.common.base;
 
 
-import static junit.framework.Assert.assertNotNull;
-
-import javax.sql.DataSource;
-
-import org.junit.Before;
 //import org.springframework.test.context.ContextConfiguration;
 //import org.springframework.test.context.TestExecutionListeners;
 //import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-import org.springframework.util.ResourceUtils;
-
-import com.duowan.common.test.dbunit.DBUnitFlatXmlHelper;
 
 /**
  * 本基类主要为子类指定好要装载的spring配置文件
