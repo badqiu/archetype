@@ -15,8 +15,8 @@ import static com.duowan.common.util.ValidationErrorsUtils.convert;
 import static com.duowan.common.beanutils.BeanUtils.copyProperties;
 import static com.duowan.common.util.holder.BeanValidatorHolder.validateWithException;
 
-import com.duowan.common.util.DateConvertUtils;
-import com.duowan.common.util.DateConvertUtils;
+import com.duowan.common.util.DateConvertUtil;
+import com.duowan.common.util.DateConvertUtil;
 import com.duowan.common.util.page.Page;
 import com.duowan.common.util.page.PageQuery;
 import com.duowan.common.web.scope.Flash;
