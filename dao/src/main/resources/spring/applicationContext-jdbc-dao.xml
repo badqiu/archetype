@@ -23,6 +23,6 @@
     </bean>
     
     <!-- jdbc数据库分页方言,提供类似hibernate的数据库分页查询,其它方言:OracleDialect,SQLServerDialect,SybaseDialect,DB2Dialect,PostgreSQLDialect,MySQLDialect,DerbyDialect,HSQLDialect -->
-    <bean id="dialect" class="com.duowan.common.jdbc.dialect.MySQLDialect"/>
+    <bean id="dialect" class="com.github.rapid.common.jdbc.dialect.MySQLDialect"/>
     
 </beans>

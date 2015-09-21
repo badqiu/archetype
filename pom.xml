@@ -9,11 +9,13 @@
   <modules>
     <module>util</module>
 	<module>dao</module>
+	<module>core-service</module>
     <module>service</module>
 	<module>scheduler</module>
     <module>web-admin</module>
 	<module>web-home</module>
-	<module>webservice</module>
+	<module>webservice-server</module>
+	<module>webservice-client</module>
 	<module>webservice-api</module>
   </modules>
 
