@@ -7,12 +7,14 @@ import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.JdbcUpdateAffectedIncorrectNumberOfRowsException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -37,14 +39,12 @@ public abstract class BaseSpringJdbcDao extends JdbcDaoSupport {
 
 	protected final Logger log = LoggerFactory.getLogger(getClass());
 
-	protected SimpleJdbcTemplate simpleJdbcTemplate;
 	protected NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
 	protected Class getEntityClass(){
 		throw new UnsupportedOperationException("not yet implements");
 	}
 	
-	//用于分页的dialect,在线参考: http://code.google.com/p/rapid-framework/wiki/rapid_dialect
 	private Dialect dialect;
 	
 	public void setDialect(Dialect d) {
@@ -53,16 +53,9 @@ public abstract class BaseSpringJdbcDao extends JdbcDaoSupport {
 	
 	protected void checkDaoConfig() {
 		super.checkDaoConfig();
-		if(dialect == null) throw new IllegalStateException("'dialect' property must be not null");
-		log.info("use jdbc dialect:"+dialect);
-		simpleJdbcTemplate = new SimpleJdbcTemplate(getJdbcTemplate());
 		namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(getJdbcTemplate());
 	}
 	
-	public SimpleJdbcTemplate getSimpleJdbcTemplate() {
-		return simpleJdbcTemplate;
-	}
-
 	public NamedParameterJdbcTemplate getNamedParameterJdbcTemplate() {
 		return namedParameterJdbcTemplate;
 	}
@@ -84,35 +77,40 @@ public abstract class BaseSpringJdbcDao extends JdbcDaoSupport {
 		}
 	}
 	
-	@SuppressWarnings("all")
-	public Page pageQuery(String sql, PageQuery pageQuery,RowMapper rowMapper) {
-		Map paramMap = new HashMap(PropertyUtils.describe(pageQuery));
+	
+	@SuppressWarnings("unchecked")
+	public <E> Page<E> pageQuery(String sql, PageQuery pageQuery,RowMapper<E> rowMapper) {
+		Map<String ,Object> paramMap = new HashMap<String ,Object> (PropertyUtils.describe(pageQuery));
 		return pageQuery(sql,paramMap,queryTotalItems(sql, paramMap),pageQuery.getPageSize(),pageQuery.getPage(),rowMapper);
 	}
 	
-	@SuppressWarnings("all")
-	public Page pageQuery(String sql, Map paramMap,int pageSize, int pageNumber, RowMapper rowMapper) {
+	public  <E> Page<E> pageQuery(String sql, Map<String ,Object> paramMap,int pageSize, int pageNumber, RowMapper<E> rowMapper) {
 		return pageQuery(sql,paramMap,queryTotalItems(sql, paramMap),pageSize,pageNumber,rowMapper);
 	}
 	
-	@SuppressWarnings("all")
-	private Page pageQuery(String sql, Map paramMap, final int totalItems,int pageSize, int pageNumber, RowMapper rowMapper) {
+	private <E> Page<E>  pageQuery(String sql, Map<String ,Object> paramMap, final int totalItems,int pageSize, int pageNumber, RowMapper<E> rowMapper) {
 		if(totalItems <= 0) {
-			return new Page(new Paginator(pageNumber,pageSize,0));
+			return new Page<E>(new Paginator(pageNumber,pageSize,0));
 		}
 		Paginator paginator = new Paginator(pageNumber, pageSize, totalItems);
-		List list = pageQueryForList(sql, paramMap,paginator.getOffset(),pageSize,rowMapper);
-		return new Page(list,paginator);
+		List<E> list = pageQueryForList(sql, paramMap,paginator.getOffset(),pageSize,rowMapper);
+		return new Page<E>(list,paginator);
 	}
 	
-	private int queryTotalItems(String querySql,Map paramMap) {
-		String removedOrderByQuery = "select count(*) from ( " + SqlRemoveUtil.removeOrders(querySql) + " ) as c ";//FIXME 未处理group by的 select count(*) from (subquery)
-		return getNamedParameterJdbcTemplate().queryForInt(removedOrderByQuery,new MapSqlParameterSource((Map)paramMap));
+	private int queryTotalItems(String querySql,Map<String,Object> paramMap) {
+		String removedOrderByQuery = "select count(*) from (" + SqlRemoveUtil.removeOrders(querySql) + ") as c";//FIXME 未处理group by的 select count(*) from (subquery)
+		return queryForInt(removedOrderByQuery,new MapSqlParameterSource(paramMap));
+	}
+	
+	public int queryForInt(String sql, SqlParameterSource paramSource) throws DataAccessException {
+		Number number = getNamedParameterJdbcTemplate().queryForObject(sql, paramSource, Number.class);
+		return (number != null ? number.intValue() : 0);
 	}
 	
 	static final String LIMIT_PLACEHOLDER = ":__limit";
 	static final String OFFSET_PLACEHOLDER = ":__offset";
-	protected List pageQueryForList(String sql, final Map paramMap, int startRow,int pageSize, final RowMapper rowMapper) {
+	@SuppressWarnings("unchecked")
+	protected <E> List<E> pageQueryForList(String sql, final Map<String,Object> paramMap, int startRow,int pageSize, final RowMapper<E> rowMapper) {
 		//支持limit查询
 		if(dialect.supportsLimit()) {
 			paramMap.put(LIMIT_PLACEHOLDER.substring(1), pageSize);
@@ -129,7 +127,8 @@ public abstract class BaseSpringJdbcDao extends JdbcDaoSupport {
 			
 			pageSize = Integer.MAX_VALUE;
 		}
-		return (List)getNamedParameterJdbcTemplate().query(sql, paramMap, new OffsetLimitResultSetExtractor(startRow,pageSize,rowMapper));
+		
+		return (List<E>)getNamedParameterJdbcTemplate().query(sql, paramMap, new OffsetLimitResultSetExtractor(startRow,pageSize,rowMapper));
 	}
 	
 	///// insert with start
@@ -139,7 +138,9 @@ public abstract class BaseSpringJdbcDao extends JdbcDaoSupport {
 	public int insertWithGeneratedKey(Object entity, String insertSql) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		int affectedRows = getNamedParameterJdbcTemplate().update(insertSql, new BeanPropertySqlParameterSource(entity) , keyHolder);
-		setIdentifierProperty(entity, keyHolder.getKey().longValue());
+		if (keyHolder.getKey() != null) {
+			setIdentifierProperty(entity, keyHolder.getKey().longValue());
+		}
 		return affectedRows;
 	}
 	

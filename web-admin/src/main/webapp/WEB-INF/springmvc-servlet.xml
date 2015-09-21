@@ -32,7 +32,7 @@
     <mvc:annotation-driven validator="validator"/>
 	
 	<!-- HandlerMapping生成器: 用于生成controllder至URL的映射,如 /user/create.do => UserController.create() -->
-	<bean class="com.duowan.common.web.mvc.annotation.ConventionAnnotationHandlerMapping">
+	<bean class="com.github.rapid.common.web.mvc.annotation.ConventionAnnotationHandlerMapping">
 		<!-- 拦截器注册 -->
 		<property name="interceptors">
 			<bean class="com.company.project.common.springmvc.interceptor.SharedRenderVariableInterceptor"/>

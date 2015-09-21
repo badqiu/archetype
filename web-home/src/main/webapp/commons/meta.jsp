@@ -22,7 +22,11 @@
 	<script src="<c:url value="/js/rapid-validation/validation_cn.js"/>" type="text/javascript"></script>
 <!-- rapid-validation END-->
 
-<script src="<c:url value="/js/application.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/js/jquery.js"/>" type="text/javascript"></script>
-
-<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
+	<link href="<c:url value="/css/bootstrap-cerulean.min.css/>" rel="stylesheet"  media="screen"/>
+	<script src="<c:url value="/js/jquery.min.js/>" type="text/javascript"></script>
+	<script src="<c:url value="/js/jquery.cookie.js/ type="text/javascript">"></script>
+	<script src="<c:url value="/js/bootstrap.min.js/>" type="text/javascript"></script>
+	
+	<script src="<c:url value="/js/application.js"/>" type="text/javascript"></script>
+	
+	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>

@@ -29,6 +29,7 @@
 			<list>
 				<!-- 统一配置文件,通过JAVA CLASSPATH变量配置在外部目录中 -->
 				<value>classpath*:app.properties</value>
+				<value>classpath*:app-local.properties</value>
 				<value>/data/app/demoproject/app.properties</value>
 			</list>
 		</property>

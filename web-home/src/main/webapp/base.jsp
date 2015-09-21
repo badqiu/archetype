@@ -1,23 +1,27 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/commons/taglibs.jsp" %>
 
-<%-- jsp模板继承,具体使用请查看: http://code.google.com/p/rapid-framework/wiki/rapid_jsp_extends --%>
-
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <html>
-
 <head>
-	<%@ include file="/commons/meta.jsp" %>
-	<base href="<%=basePath%>">
-	<duowan:block name="head"/>
-</head>
-<body>
-	<%@ include file="/commons/messages.jsp" %>
-
-	<duowan:block name="content"/>
+	<script src="${ctx}/js/jquery.min.js"></script>
+	<script src="${ctx}/js/jquery.cookie.js"></script>
+	<script src="${ctx}/js/rest.js" ></script>
 	
+	<link href="<c:url value="/widgets/simpletable/simpletable.css"/>" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="<c:url value="/widgets/simpletable/simpletable.js"/>"></script>
+	
+	<link href="${ctx}/css/bootstrap-cerulean.min.css" rel="stylesheet"  media="screen"/>
+	<script src="${ctx}/js/bootstrap.min.js"></script>
+	
+	<rapid:block name="head">
+	</rapid:block>
+</head>
+
+<body>
+	<%@ include file="/commons/messages.jsp"  %>
+	<div class="container-fluid">
+		<rapid:block name="content"/>
+	</div>
 </body>
-</html>	
+
+</html>
