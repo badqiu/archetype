@@ -7,10 +7,10 @@ import org.eclipse.jetty.webapp.WebAppContext;
  * @author badqiu
  *
  */
-public class JettyServer {
+public class WebAdminJettyServer {
 	
 	public static void main(String[] args) throws Exception {
-		Server server = buildNormalServer(8080, "/");
+		Server server = buildNormalServer(7070, "/");
 		server.start();
 	}
 	

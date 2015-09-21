@@ -7,7 +7,7 @@ import org.eclipse.jetty.webapp.WebAppContext;
  * @author badqiu
  *
  */
-public class JettyServer {
+public class WebServiceJettyServer {
 	
 	public static void main(String[] args) throws Exception {
 		Server server = buildNormalServer(8080, "/");
