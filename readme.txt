@@ -11,7 +11,7 @@ shell		脚本目录，存放如linux脚本
 util		工具类项目
 dao			dao项目
 service		service层项目, 存放普通服务
-core-service 存放核心服务, 目的： 如项目开发过程中，有部分service是很重要的，可以给其它service重用，则创建该项目，否则为空
+core-service 存放核心服务, 目的： 如项目开发过程中，有部分service是很重要的，可以给其它service重用，则创建该项目，普通的service重用度不高的，不要放在该项目
 scheduler	定时调度项目, 包含所有定时调度任务,目的: 调度任务一般不需要多机部署，只要跟后台任务一样，部署单实例即可
 web-home	web前台项目		目的: 将前台项目与后台部署分离，进程分离，1. 避免后台更新，前台需要重启 2. 后台不需要那么多实例
 web-admin	web后台项目
