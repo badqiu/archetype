@@ -10,7 +10,7 @@
 	<link href="<c:url value="/widgets/simpletable/simpletable.css"/>" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="<c:url value="/widgets/simpletable/simpletable.js"/>"></script>
 	
-	<link href="${ctx}/css/bootstrap-cerulean.min.css" rel="stylesheet"  media="screen"/>
+	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
 	<script src="${ctx}/js/bootstrap.min.js"></script>
 	
 	<rapid:block name="head">
@@ -18,8 +18,8 @@
 </head>
 
 <body>
-	<%@ include file="/commons/messages.jsp"  %>
 	<div class="container-fluid">
+		<%@ include file="/commons/messages.jsp"  %>
 		<rapid:block name="content"/>
 	</div>
 </body>
