@@ -40,11 +40,6 @@
 		<property name="password" value="${demoproject_jdbc_password}"/>		
 	</bean>
 	
-	<!-- 用于子dao继承,以便配置不同数据源 -->
-	<bean id="demoprojectDaoParent" abstract="true">
-		<property name="dataSource" ref="demoprojectDataSource"/>
-	</bean>
-	
 	<!-- 
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
         <property name="jndiName"><value>java:comp/env/jdbc/ds</value></property>
