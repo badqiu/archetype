@@ -37,7 +37,7 @@
 	
 	<!-- Mysql -->
 	<!--  -->
-	<entry key="jdbc_url">jdbc:mysql://121.9.240.14:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<entry key="jdbc_url">jdbc:mysql://121.9.240.14:3306/test?useUnicode=true&amp;characterEncoding=utf8</entry>
 	<entry key="jdbc_driver">com.mysql.jdbc.Driver</entry>
 
 	<!-- Oracle		jdbc:oracle:oci:@tnsname_devdb
