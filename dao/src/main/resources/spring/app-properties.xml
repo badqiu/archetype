@@ -16,9 +16,12 @@
 		<property name="locations">
 			<list>
 				<!-- 统一配置文件,通过JAVA CLASSPATH变量配置在外部目录中 -->
-				<value>classpath*:app.properties</value>
-				<value>classpath*:app-local.properties</value>
-				<value>/data/app/demoproject/app.properties</value>
+				<!-- 默认配置 -->
+				<value>classpath*:app.properties</value> 
+				<!-- eclipse开发中的本地配置 -->
+				<value>classpath*:app-local.properties</value> 
+				<!-- 不同环境中的配置,APP_MODE值为:prod,dev,test ... 等值 -->
+				<value>/data/app/demoproject/${APP_MODE}/app.properties</value> 
 			</list>
 		</property>
     </bean>
