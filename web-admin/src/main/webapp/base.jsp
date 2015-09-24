@@ -13,6 +13,11 @@
 	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
 	<script src="${ctx}/js/bootstrap.min.js"></script>
 	
+	<!-- fileinput -->
+	<script src="${ctx}/js/fileinput.js"></script>
+	<script src="${ctx}/js/fileinput_locale_zh.js"></script>
+	<link href="${ctx}/css/fileinput.css" rel="stylesheet"  media="screen"/>
+	
 	<rapid:block name="head">
 	</rapid:block>
 </head>
