@@ -18,6 +18,11 @@
 	<script src="${ctx}/js/fileinput_locale_zh.js"></script>
 	<link href="${ctx}/css/fileinput.css" rel="stylesheet"  media="screen"/>
 	
+	<!-- jquery.validate doc: http://jqueryvalidation.org/ -->
+	<script src="${ctx}/js/jquery.validate/jquery.validate.js"></script>
+	<script src="${ctx}/js/jquery.validate/additional-methods.js"></script>
+	<script src="${ctx}/js/jquery.validate/localization/messages_zh.js"></script>
+	
 	<rapid:block name="head">
 	</rapid:block>
 </head>

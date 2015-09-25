@@ -1,28 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<meta http-equiv="Cache-Control" content="no-store"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="0"/>
+
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="Cache-Control" content="no-store"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
 
 <!-- optional javascript: effects.js,jquery.js -->
 	<link href="<c:url value="/styles/global.css"/>" type="text/css" rel="stylesheet">
 
-<!-- rapid-validation BEGIN-->
-	<link href="<c:url value="/js/rapid-validation/validation.css"/>" type="text/css" rel="stylesheet">
-	<script src="<c:url value="/js/rapid-validation/prototype_for_validation.js"/>" type="text/javascript"></script>
-	
-	<!-- 
-	<script src="<c:url value="/js/rapid-validation/effects.js"/>" type="text/javascript"></script>
-	-->
-	
-	<!-- show validation error as tooptips -->
-	<script src="<c:url value="/js/rapid-validation/tooltips.js"/>" type="text/javascript"></script>
-	<link href="<c:url value="/js/rapid-validation/tooltips.css"/>" type="text/css" rel="stylesheet">
-	
-	<script src="<c:url value="/js/rapid-validation/validation_cn.js"/>" type="text/javascript"></script>
-<!-- rapid-validation END-->
-
-	<link href="<c:url value="/css/bootstrap-cerulean.min.css/>" rel="stylesheet"  media="screen"/>
+	<link href="<c:url value="/css/bootstrap.min.css/>" rel="stylesheet"  media="screen"/>
+	<link href="<c:url value="/css/bootstrap.theme.min.css/>" rel="stylesheet"  media="screen"/>
 	<script src="<c:url value="/js/jquery.min.js/>" type="text/javascript"></script>
 	<script src="<c:url value="/js/jquery.cookie.js/ type="text/javascript">"></script>
 	<script src="<c:url value="/js/bootstrap.min.js/>" type="text/javascript"></script>
@@ -30,3 +17,14 @@
 	<script src="<c:url value="/js/application.js"/>" type="text/javascript"></script>
 	
 	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
+
+	<!-- fileinput -->
+	<script src="<c:url value="/js/fileinput.js"/>"></script>
+	<script src="<c:url value="/js/fileinput_locale_zh.js"/>"></script>
+	<link href="<c:url value="/css/fileinput.css"/>" rel="stylesheet"  media="screen"/>
+	
+	<!-- jquery.validate doc: http://jqueryvalidation.org/ -->
+	<script src=""<c:url value="/js/jquery.validate/jquery.validate.js"/>"></script>
+	<script src=""<c:url value="/js/jquery.validate/additional-methods.js"/>"></script>
+	<script src=""<c:url value="/js/jquery.validate/localization/messages_zh.js"/>"></script>
+	
