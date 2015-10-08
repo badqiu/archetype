@@ -773,7 +773,7 @@
 			<id>test</id>
 			<activation>
 				<property>
-					<name>env</name>
+					<name>APP_MODE</name>
 					<value>test</value>
 				</property>
 			</activation>
@@ -782,7 +782,7 @@
 			<id>prod</id>
 			<activation>
 				<property>
-					<name>env</name>
+					<name>APP_MODE</name>
 					<value>prod</value>
 				</property>
 			</activation>
