@@ -17,7 +17,7 @@ web-home	web前台项目		目的: 将前台项目与后台部署分离，进程�
 web-admin	web后台项目
 webservice-api  	用于对外发布webservice给外部系统调用，包含webservice的 接口，异常，DTO等类；
 webservice-server	用于存放webservice-api项目的server端实现类(impl类)
-webservice-client 	webservice-api的客户端实现类，如果直接暴露webservice-api给客户端，导致api太难使用，可以通过本项目再包装一层
+webservice-client 	webservice-api的客户端实现类，如果直接暴露webservice-api给客户端，导致api太难使用,或需要增加数据缓存，可以通过本项目再包装一层
 
 ----------------------------------------
 项目依赖结构
