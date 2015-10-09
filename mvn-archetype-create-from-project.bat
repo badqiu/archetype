@@ -10,6 +10,7 @@ del target\generated-sources\archetype\src\main\resources\archetype-resources\re
 del target\generated-sources\archetype\src\main\resources\archetype-resources\pom-archetype.xml
 del target\generated-sources\archetype\src\main\resources\archetype-resources\mvn-archetype-create-from-project.bat
 del target\generated-sources\archetype\src\main\resources\archetype-resources\archetype-catalog.xml
+copy /Y target\generated-sources\archetype\pom.xml target\generated-sources\archetype\pom.bak.xml
 copy /Y pom-archetype.xml target\generated-sources\archetype\pom.xml
 
 
