@@ -9,6 +9,7 @@ shell		脚本目录，存放如linux脚本
 项目目录说明
 ----------------------------------------
 util		工具类项目
+model		dao数据模型,对应数据库表的model代码
 dao			dao项目,存放数据持久层代码
 service		service层项目, 存放普通服务
 core-service 存放核心服务, 目的： 如项目开发过程中，有部分service是很重要的，可以给其它service重用，则创建该项目，普通的service重用度不高的，不要放在该项目
@@ -23,6 +24,7 @@ webservice-client 	webservice-api的客户端实现类，如果直接暴露webse
 项目依赖结构
 ----------------------------------------
 	util
+	model
 		dao
 			core-service
 				service
