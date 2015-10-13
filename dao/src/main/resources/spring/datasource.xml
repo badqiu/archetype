@@ -8,8 +8,8 @@
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
 	   default-autowire="byName" default-lazy-init="false">
 
-	<!-- father 数据源 -->
-	<bean id="fatherDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" abstract="true">
+	<!-- parent 数据源,用于子数据源继承 -->
+	<bean id="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" abstract="true">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="autoCommitOnClose" value="false" />
 		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
@@ -34,7 +34,7 @@
 	</bean>
 		   
 	<!-- 数据源定义 -->
-	<bean id="demoprojectDataSource" parent="fatherDataSource">
+	<bean id="demoprojectDataSource" parent="parentDataSource">
 		<property name="jdbcUrl" value="${demoproject_jdbc_url}"/>
 		<property name="user" value="${demoproject_jdbc_user}"/>
 		<property name="password" value="${demoproject_jdbc_password}"/>		
