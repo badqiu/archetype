@@ -364,11 +364,10 @@
 	<!-- logging end-->
 	
 	<!-- j2ee web spec -->
-	<!-- 
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>servlet-api</artifactId>
-		<version>2.5</version>
+		<version>3.0-alpha-1</version>
 		<scope>provided</scope>
 	</dependency>
 	<dependency>
@@ -383,7 +382,6 @@
 		<version>1.1.2</version>
 		<scope>provided</scope>
 	</dependency>
-	 -->
 
 	<!-- email begin -->
 	<dependency>
