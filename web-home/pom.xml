@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <parent>
-    <artifactId>demoproject</artifactId>
-    <groupId>com.company.project</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<artifactId>demoproject</artifactId>
+		<groupId>com.company.project</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.company.project</groupId>
-  <artifactId>demoproject-web-home</artifactId>
-  <version>1.0-SNAPSHOT</version>
+	<groupId>com.company.project</groupId>
+	<artifactId>demoproject-web-home</artifactId>
+	<version>1.0-SNAPSHOT</version>
 
-   <packaging>war</packaging>
+	<packaging>war</packaging>
 
 	<build>
 		<finalName>${project.name}</finalName>
@@ -31,23 +31,32 @@
 		<dependency>
 			<groupId>org.eclipse.jetty.aggregate</groupId>
 			<artifactId>jetty-webapp</artifactId>
-			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.eclipse.jetty.orbit</groupId>
+					<artifactId>javax.servlet</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-jsp</artifactId>
-			<scope>test</scope>
 		</dependency>
 		
 		<!-- j2ee web spec -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		 
 		
 		<!-- test BEGIN -->
 		<dependency>
