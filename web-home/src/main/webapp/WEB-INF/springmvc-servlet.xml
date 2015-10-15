@@ -28,7 +28,7 @@
 	<mvc:resources location="/js/" mapping="/js/**"/>  
 	<mvc:resources location="/css/" mapping="/css/**"/>  
 	<mvc:resources location="/widgets/" mapping="/widgets/**"/>  
-	 -->
+	 -->  
 	
 	<!-- 开启支持@NumberFormat @DateTimeFormat @Valid标注 ,@DateTimeFormat用于bean 日期属性的格式化,请查看: http://static.springsource.org/spring/docs/3.0.2.RELEASE/spring-framework-reference/htmlsingle/spring-framework-reference.html#mvc-config-->
 	<!-- annotation-driven与ConventionAnnotationHandlerMapping有冲突,只能选其一,原因： spring3.1 RequestMappingHandlerMapping与 ConventionAnnotationHandlerMapping存在冲突 -->
@@ -56,8 +56,23 @@
     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
+            	<prop key="java.lang.SecurityException">/commons/security_error</prop>
             </props>
         </property>
     </bean>
+    
+    <!-- 支持上传文件 -->  
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- set the max upload size 2MB -->
+		<property name="maxUploadSize">
+			<value>1024000000</value>
+		</property>
+		<property name="defaultEncoding">
+			<value>utf-8</value>
+		</property>
+		<property name="maxInMemorySize">
+			<value>10240</value>
+		</property>
+	</bean>
         
 </beans>
