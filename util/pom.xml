@@ -210,16 +210,6 @@
 	</dependency>	
 	<!-- logging end-->
 	
-	<!-- j2ee web spec -->
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>jstl</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-	</dependency>
-
 	<!-- email begin -->
 	<dependency>
 		<groupId>javax.mail</groupId>
