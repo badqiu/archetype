@@ -25,7 +25,6 @@
 		<!-- versions -->
 		<spring.version>4.2.1.RELEASE</spring.version>
 		<jetty.version>8.1.16.v20140903</jetty.version>
-		<!--<jetty.version>9.3.4.RC0</jetty.version>-->
 		<h2.version>1.4.189</h2.version>
 		<jackson.version>1.9.13</jackson.version>
 		<slf4j.version>1.7.12</slf4j.version>
@@ -38,6 +37,7 @@
 		<!-- propect properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.6</java.version>
+		
 	</properties>
 
 	<!-- deploy path -->
@@ -367,8 +367,8 @@
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
-		<version>3.0.0</version>
-		<scope>compile</scope>
+		<version>3.1.0</version>
+		<scope>provided</scope>
 	</dependency>
 	<dependency>
 		<groupId>javax.servlet</groupId>
@@ -380,12 +380,6 @@
 		<groupId>javax.servlet</groupId>
 		<artifactId>jsp-api</artifactId>
 		<version>2.0</version>
-		<exclusions>
-			<exclusion>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-			</exclusion>
-		</exclusions>
 	</dependency>
 
 	<!-- email begin -->

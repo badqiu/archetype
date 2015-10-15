@@ -355,19 +355,5 @@
 	</dependency>
 	<!-- shiro security end -->
 	
-	<!--						
-	<dependency>
-	    <groupId>dwr</groupId>
-	    <artifactId>dwr</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>net.sf.ezmorph</groupId>
-	    <artifactId>ezmorph</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>backport-util-concurrent</groupId>
-	    <artifactId>backport-util-concurrent</artifactId>
-	</dependency>
-	-->  	
   </dependencies>
 </project>
