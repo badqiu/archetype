@@ -32,10 +32,10 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
-		<!-- rpc -->
+		<!-- rest-rpc -->
 		<dependency>
-		        <groupId>com.github.rapid.common</groupId>
-		        <artifactId>rapid-common-rest</artifactId>
+	        <groupId>com.github.rapid.common</groupId>
+	        <artifactId>rapid-common-rest</artifactId>
 		</dependency>
 	
 		<!-- jetty -->
