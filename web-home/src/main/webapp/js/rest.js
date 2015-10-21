@@ -7,17 +7,17 @@
  */
 function doRestDelete(anchor,confirmMsg) {
 	if (confirmMsg && confirm(confirmMsg)) {
-		var f = document.createElement("form");
-		f.style.display = "none";
-		anchor.parentNode.appendChild(f);
-		f.method = "POST";
-		f.action = anchor.href;
+		var form = document.createElement("form");
+		form.style.display = "none";
+		anchor.parentNode.appendChild(form);
+		form.method = "POST";
+		form.action = anchor.href;
 		var m = document.createElement("input");
 		m.setAttribute("type", "hidden");
 		m.setAttribute("name", "_method");
 		m.setAttribute("value", "delete");
-		f.appendChild(m);
-		f.submit();
+		form.appendChild(m);
+		form.submit();
 	}
 }
 
