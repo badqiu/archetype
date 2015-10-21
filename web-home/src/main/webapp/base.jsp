@@ -17,9 +17,9 @@
 	<script src="${ctx}/js/bootstrap.min.js"></script>
 	
 	<!-- fileinput -->
-	<script src="${ctx}/js/fileinput.js"></script>
-	<script src="${ctx}/js/fileinput_locale_zh.js"></script>
-	<link href="${ctx}/css/fileinput.css" rel="stylesheet"  media="screen"/>
+	<script src="${ctx}/js/fileinput/fileinput.js"></script>
+	<script src="${ctx}/js/fileinput/fileinput_locale_zh.js"></script>
+	<link href="${ctx}/js/fileinput/fileinput.css" rel="stylesheet"  media="screen"/>
 	
 	<!-- jquery.validate doc: http://jqueryvalidation.org/ -->
 	<script src="${ctx}/js/jquery.validate/jquery.validate.js"></script>
