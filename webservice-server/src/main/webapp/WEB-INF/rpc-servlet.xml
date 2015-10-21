@@ -9,7 +9,7 @@
 	<!--
 	<bean id="blogInfoService" class="com.demo.common.rpc.fortest.api.BlogInfoServiceImpl"/>
 
-	<bean class="com.rapid.common.rpc.server.RPCServiceExporter">
+	<bean class="com.github.rapid.common.rpc.server.RPCServiceExporter">
 	  <property name="serviceInterface" value="com.demo.common.rpc.fortest.api.BlogInfoService" />
 	  <property name="service" ref="blogInfoService"/>
 	</bean>
