@@ -15,7 +15,11 @@
 	<!-- bootstrap -->
 	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
 	<script src="${ctx}/js/bootstrap.min.js"></script>
-	
+
+	<!-- multiple-select -->
+	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
+	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>
+
 	<!-- fileinput -->
 	<script src="${ctx}/js/fileinput/fileinput.js"></script>
 	<script src="${ctx}/js/fileinput/fileinput_locale_zh.js"></script>

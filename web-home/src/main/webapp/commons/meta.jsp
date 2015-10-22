@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta http-equiv="Cache-Control" content="no-store"/>
@@ -17,6 +18,10 @@
 	<script src="<c:url value="/js/application.js"/>" type="text/javascript"></script>
 	
 	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
+
+	<!-- multiple-select -->
+	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
+	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>
 
 	<!-- fileinput -->
 	<script src="<c:url value="/js/fileinput/fileinput.js"/>"></script>

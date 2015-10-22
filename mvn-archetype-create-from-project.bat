@@ -1,3 +1,4 @@
+call mvn package -Dmaven.test.skip=true -U
 call mvn clean
 call mvn eclipse:clean
 call mvn archetype:create-from-project
