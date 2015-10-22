@@ -738,6 +738,7 @@
 		   <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
+				<version>3.4</version>
 				<configuration>
 				  <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
 				</configuration>
@@ -747,7 +748,7 @@
 			<plugin>
 			  	<groupId>org.eclipse.jetty</groupId>
     			<artifactId>jetty-maven-plugin</artifactId>
-    			<version>${jetty.version}</version>
+    			<version>9.0.5.v20130815</version>
     			<configuration>
     				<scanIntervalSeconds>10</scanIntervalSeconds>
                 	<stopKey>foo</stopKey>
