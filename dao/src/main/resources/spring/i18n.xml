@@ -25,5 +25,9 @@
     	<property name="defaultEncoding" value="UTF-8"/>
     	<property name="cacheSeconds" value="60"/>
     </bean>
+    
+    <!-- 可以通过: LocaleResolver.setLocale() 指定 locale -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+    </bean>
 
 </beans>
