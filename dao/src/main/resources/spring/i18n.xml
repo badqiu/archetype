@@ -25,15 +25,5 @@
     	<property name="defaultEncoding" value="UTF-8"/>
     	<property name="cacheSeconds" value="60"/>
     </bean>
-    
-	<!--  激活 @Required @Autowired,JSR 250's @PostConstruct, @PreDestroy and @Resource 等标注 -->
-	<context:annotation-config />
-	
-	<!--  激活 @Scheduled @Async等annotation -->
-	<task:annotation-driven/>
-	
-	<!-- 支持 @AspectJ 标记
-		<aop:aspectj-autoproxy/>
-	-->
 
 </beans>
