@@ -14,6 +14,10 @@
            http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.0.xsd"
 	   default-autowire="byName" default-lazy-init="false">
 
+	<description>
+		配置激活spring的annotation
+	</description>
+	
 	<!--  激活 @Required @Autowired,JSR 250's @PostConstruct, @PreDestroy and @Resource 等标注 -->
 	<context:annotation-config />
 	
