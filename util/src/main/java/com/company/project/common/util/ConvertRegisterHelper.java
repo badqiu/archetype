@@ -20,22 +20,24 @@ import org.apache.commons.beanutils.converters.ShortConverter;
 import org.apache.commons.beanutils.converters.SqlDateConverter;
 import org.apache.commons.beanutils.converters.SqlTimeConverter;
 import org.apache.commons.beanutils.converters.SqlTimestampConverter;
+import org.springframework.beans.factory.InitializingBean;
 
 import com.github.rapid.common.beanutils.converter.StringConverter;
+
 /**
  * 注册Converter, 用于apache commons BeanUtils.copyProperties()方法中的class类型转换;
  * 可以修改此处代码以添加新的Converter
  * @author badqiu
  */
-public class ConvertRegisterHelper {
+public class ConvertRegisterHelper implements InitializingBean {
 
-	public static void registerConverters() {
+	public static void registerConverters(String... datePatterns) {
 		ConvertUtils.register(new StringConverter(), String.class);
 		//date 
-		ConvertUtils.register(new DateConverter(null),java.util.Date.class);
-        ConvertUtils.register(new SqlDateConverter(null),java.sql.Date.class);
-		ConvertUtils.register(new SqlTimeConverter(null),Time.class);
-		ConvertUtils.register(new SqlTimestampConverter(null),Timestamp.class);
+		ConvertUtils.register(ConvertRegisterHelper.setPatterns(new DateConverter(null),datePatterns),java.util.Date.class);
+		ConvertUtils.register(ConvertRegisterHelper.setPatterns(new SqlDateConverter(null),datePatterns),java.sql.Date.class);
+		ConvertUtils.register(ConvertRegisterHelper.setPatterns(new SqlTimeConverter(null),datePatterns),Time.class);
+		ConvertUtils.register(ConvertRegisterHelper.setPatterns(new SqlTimestampConverter(null),datePatterns),Timestamp.class);
 		//number
 		ConvertUtils.register(new BooleanConverter(null), Boolean.class);
 		ConvertUtils.register(new ShortConverter(null), Short.class);
@@ -47,11 +49,11 @@ public class ConvertRegisterHelper {
 		ConvertUtils.register(new BigIntegerConverter(null), BigInteger.class);	
 	}
 
-//	public static void registerConverters(ConvertUtilsBean convertUtils) {
-//		registerConverters(convertUtils,new String[] {"yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-MM-dd HH:mm:ss.SSS","HH:mm:ss"});
-//	}
+	public static void registerConverters(ConvertUtilsBean convertUtils) {
+		registerConverters(convertUtils,"yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-MM-dd HH:mm:ss.SSS","HH:mm:ss");
+	}
 	
-	public static void registerConverters(ConvertUtilsBean convertUtils,String[] datePatterns) {
+	public static void registerConverters(ConvertUtilsBean convertUtils,String... datePatterns) {
 		convertUtils.register(new StringConverter(), String.class);
 		//date 
 		convertUtils.register(ConvertRegisterHelper.setPatterns(new DateConverter(null),datePatterns),java.util.Date.class);
@@ -72,6 +74,11 @@ public class ConvertRegisterHelper {
 	public static <T extends DateTimeConverter> T setPatterns(T converter ,String... patterns) {
 		converter.setPatterns(patterns);
 		return converter;
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		registerConverters("yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-MM-dd HH:mm:ss.SSS","HH:mm:ss");
 	}
 	
 }
