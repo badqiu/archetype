@@ -25,7 +25,7 @@
 				<!-- eclipse开发中的本地配置 -->
 				<value>classpath*:app-local.properties</value> 
 				<!-- 不同环境中的配置,APP_MODE值为:prod,dev,test ... 等值 -->
-				<value>/data/app/demoproject/${APP_MODE:dev}/app.properties</value> 
+				<value>file:/data/app/demoproject/${APP_MODE:dev}/app.properties</value> 
 			</list>
 		</property>
     </bean>
