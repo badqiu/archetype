@@ -32,6 +32,9 @@
 	
 	<script src="${ctx}/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 	
+	<!-- 开启自适应移动设备 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
 	<rapid:block name="head">
 	</rapid:block>
 </head>

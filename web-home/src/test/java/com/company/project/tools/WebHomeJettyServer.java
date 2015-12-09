@@ -23,8 +23,8 @@ public class WebHomeJettyServer {
 		Server server = new Server(port);
 		WebAppContext webContext = new WebAppContext("src/main/webapp", contextPath);
 		webContext.setClassLoader(Thread.currentThread().getContextClassLoader());
-		//webContext.setDefaultsDescriptor("jetty-webdefault.xml"); // 避免windows lock,设置useFileMappedBuffer=false
-		webContext.getInitParams().put("org.eclipse.jetty.servlet.Default.useFileMappedBuffer", "false"); // 避免windows lock,设置useFileMappedBuffer=false
+		//webContext.setDefaultsDescriptor("jetty-webdefault.xml"); // 避免windows lock,导致文件无法修改的问题,设置useFileMappedBuffer=false
+		webContext.getInitParams().put("org.eclipse.jetty.servlet.Default.useFileMappedBuffer", "false"); // 避免windows lock,导致文件无法修改的问题,设置useFileMappedBuffer=false
 		
 		//设置这个，可以加载jar的 jsp tld 文件(jsp tag file)
 		webContext.setClassLoader(new WebAppClassLoader(webContext));
