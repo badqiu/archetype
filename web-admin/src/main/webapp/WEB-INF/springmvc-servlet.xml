@@ -80,7 +80,7 @@
     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-            	<prop key="java.lang.SecurityException">/commons/security_error</prop>
+            	<prop key="java.lang.SecurityException">/commons/error</prop>
             </props>
         </property>
     </bean>
