@@ -21,4 +21,8 @@
 		<property name="validationMessageSource" ref="messageSource"/>
 	</bean>
     
+   	<bean class="com.github.rapid.common.util.holder.BeanValidatorHolder">
+		<property name="validator" ref="validator"></property>
+	</bean>
+	
 </beans>
