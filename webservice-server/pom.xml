@@ -37,7 +37,13 @@
 	        <groupId>com.github.rapid.common</groupId>
 	        <artifactId>rapid-common-rest</artifactId>
 		</dependency>
-	
+		
+		<!-- servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		
 		<!-- jetty -->
 		<dependency>
 			<groupId>org.eclipse.jetty.aggregate</groupId>

@@ -34,16 +34,18 @@
 	<!-- annotation-driven与ConventionAnnotationHandlerMapping有冲突,只能选其一,原因： spring3.1 RequestMappingHandlerMapping与 ConventionAnnotationHandlerMapping存在冲突 -->
 	<!--     <mvc:annotation-driven validator="validator"/> -->
 	
-	<!-- HandlerMapping生成器: 用于生成controllder至URL的映射,如 /user/create.do => UserController.create() -->
-	<bean class="com.github.rapid.common.web.mvc.annotation.ConventionAnnotationHandlerMapping">
-		<!-- 拦截器注册 -->
+	<!-- 
+		约定大于配置的HandlerMapping, 为RequestMapping标注的method 生成默认path 
+		示例:  UserController.create() => /create.do 的url默认映射
+	-->
+	<bean class="com.github.rapid.common.web.mvc.ConventionRequestMappingHandlerMapping">
 		<property name="interceptors">
 			<bean class="com.company.project.common.springmvc.interceptor.SharedRenderVariableInterceptor"/>
 		</property>
 	</bean>
-
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
-    
+	<!-- 与RequestMappingHandlerMapping配置使用的 HandlerAdapter -->    
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> 
+	
     <!-- ViewResolver -->
  	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
