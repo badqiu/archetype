@@ -34,32 +34,59 @@
 	<!-- annotation-driven与ConventionAnnotationHandlerMapping有冲突,只能选其一,原因： spring3.1 RequestMappingHandlerMapping与 ConventionAnnotationHandlerMapping存在冲突 -->
 	<!--     <mvc:annotation-driven validator="validator"/> -->
 	
-	<!-- HandlerMapping生成器: 用于生成controllder至URL的映射,如 /user/create.do => UserController.create() -->
-	<bean class="com.github.rapid.common.web.mvc.annotation.ConventionAnnotationHandlerMapping">
-		<!-- 拦截器注册 -->
+	<!-- 
+		约定大于配置的HandlerMapping, 为RequestMapping标注的method 生成默认path 
+		示例:  UserController.create() => /create.do 的url默认映射
+	-->
+	<bean class="com.github.rapid.common.web.mvc.ConventionRequestMappingHandlerMapping">
 		<property name="interceptors">
-			<bean class="com.company.project.common.springmvc.interceptor.SharedRenderVariableInterceptor"/>
+			<list>
+				<bean class="com.company.project.common.springmvc.interceptor.SharedRenderVariableInterceptor"/>
+				<!-- 识别用户的设备类型 -->
+				<bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
+				<!-- 可以通过site_preference=mobile指定访问移动设备的网页 -->
+				<bean class="org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor" />
+			</list>
 		</property>
 	</bean>
-
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
-    
+	<!-- 与RequestMappingHandlerMapping配置使用的 HandlerAdapter -->    
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> 
+	
     <!-- ViewResolver -->
  	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
-	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/pages"/>
-        <property name="suffix" value=".jsp"/>
-        <property name="order" value="1"/>
-    </bean>
-    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="exposeSpringMacroHelpers" value="true"/>
-    	<property name="contentType" value="text/html; charset=utf-8"/>
-        <property name="cache" value="false" />
-        <property name="prefix" value=""/>
-        <property name="suffix" value=".ftl" />
-        <property name="order" value="0"/>
-    </bean>
+ 	
+	<bean class="org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver">
+		<constructor-arg>
+			<!-- jsp ViewResolver -->
+		    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		        <property name="prefix" value="/pages"/>
+		        <property name="suffix" value=".jsp"/>
+		        <property name="order" value="1"/>
+		    </bean>
+		</constructor-arg>
+		<property name="mobileSuffix" value=".mobile"/>
+		<property name="tabletSuffix" value=".tablet"/>
+		<property name="enableFallback" value="true" />
+		<property name="order" value="1"/>
+	</bean>
+	
+	<bean class="org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver">
+		<constructor-arg>
+		    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		        <property name="exposeSpringMacroHelpers" value="true"/>
+		    	<property name="contentType" value="text/html; charset=utf-8"/>
+		        <property name="cache" value="false" />
+		        <property name="prefix" value=""/>
+		        <property name="suffix" value=".ftl" />
+		        <property name="order" value="0"/>
+   			</bean>
+		</constructor-arg>
+		<property name="mobileSuffix" value=".mobile"/>
+		<property name="tabletSuffix" value=".tablet"/>
+		<property name="enableFallback" value="true" />
+		<property name="order" value="0"/>
+	</bean>
 
 	<!-- 配置freeMarker的模板路径 -->
 	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
