@@ -7,6 +7,8 @@
 	<script src="${ctx}/js/jquery.min.js"></script>
 	<script src="${ctx}/js/jquery.cookie.js"></script>
 	<script src="${ctx}/js/rest.js" ></script>
+	<script src="${ctx}/js/underscore.js" ></script>
+	
 	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
 	<!-- simpletable -->

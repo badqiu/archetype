@@ -16,6 +16,7 @@
 	<script src="<c:url value="/js/bootstrap.min.js"/>" type="text/javascript"></script>
 	
 	<script src="<c:url value="/js/application.js"/>" type="text/javascript"></script>
+	<script src="<c:url value="/js/underscore.js"/>" type="text/javascript"></script>
 	
 	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
 

@@ -4,10 +4,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-	
 	<script src="${ctx}/js/jquery.min.js"></script>
 	<script src="${ctx}/js/jquery.cookie.js"></script>
 	<script src="${ctx}/js/rest.js" ></script>
+	<script src="${ctx}/js/underscore.js" ></script>
+	
 	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
 	<!-- simpletable -->
@@ -33,6 +34,9 @@
 	<script src="${ctx}/js/jquery.validate/localization/messages_zh.js"></script>
 	
 	<script src="${ctx}/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+	
+	<!-- 开启自适应移动设备 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	
 	<rapid:block name="head">
 	</rapid:block>
