@@ -26,6 +26,8 @@
 				<value>classpath*:app-local.properties</value> 
 				<!-- 不同环境中的配置,APP_MODE值为:prod,dev,test ... 等值 -->
 				<value>file:/data/app/demoproject/${APP_MODE:dev}/app.properties</value> 
+				<value>file:/etc/demoproject/app.properties</value>
+				<value>file:/${user.home}/demoproject/app.properties</value> 
 			</list>
 		</property>
     </bean>
