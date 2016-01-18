@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<script src="${ctx}/js/jquery.min.js"></script>
 	<script src="${ctx}/js/jquery.cookie.js"></script>
+	<script src="${ctx}/js/app.js" ></script>
 	<script src="${ctx}/js/rest.js" ></script>
 	<script src="${ctx}/js/underscore.js" ></script>
 	

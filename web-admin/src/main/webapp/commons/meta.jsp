@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+	<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta http-equiv="Cache-Control" content="no-store"/>
 	<meta http-equiv="Pragma" content="no-cache"/>
 	<meta http-equiv="Expires" content="0"/>
 
-<!-- optional javascript: effects.js,jquery.js -->
+	<!-- optional javascript: effects.js,jquery.js -->
 	<link href="<c:url value="/styles/global.css"/>" type="text/css" rel="stylesheet">
 
 	<link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet"  media="screen"/>
@@ -15,7 +15,7 @@
 	<script src="<c:url value="/js/jquery.cookie.js"/>" type="text/javascript">"></script>
 	<script src="<c:url value="/js/bootstrap.min.js"/>" type="text/javascript"></script>
 	
-	<script src="<c:url value="/js/application.js"/>" type="text/javascript"></script>
+	<script src="<c:url value="/js/app.js"/>" type="text/javascript"></script>
 	<script src="<c:url value="/js/underscore.js"/>" type="text/javascript"></script>
 	
 	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
