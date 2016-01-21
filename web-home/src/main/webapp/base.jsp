@@ -3,11 +3,9 @@
 
 <html>
 <head>
+	<!-- jquery -->
 	<script src="${ctx}/js/jquery.min.js"></script>
 	<script src="${ctx}/js/jquery.cookie.js"></script>
-	<script src="${ctx}/js/rest.js" ></script>
-	<script src="${ctx}/js/application.js" ></script>
-	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
 	<!-- simpletable -->
 	<link href="${ctx}/widgets/simpletable/simpletable.css" type="text/css" rel="stylesheet">
@@ -33,6 +31,11 @@
 	<script src="${ctx}/js/jquery.validate/jquery.validate.js"></script>
 	<script src="${ctx}/js/jquery.validate/additional-methods.js"></script>
 	<script src="${ctx}/js/jquery.validate/localization/messages_zh.js"></script>
+	
+	<!-- app -->
+	<script src="${ctx}/js/rest.js" ></script>
+	<script src="${ctx}/js/app.js" ></script>
+	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
 	<rapid:block name="head">
 	</rapid:block>

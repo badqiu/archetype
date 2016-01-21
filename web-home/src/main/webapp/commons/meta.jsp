@@ -6,18 +6,12 @@
 	<meta http-equiv="Pragma" content="no-cache"/>
 	<meta http-equiv="Expires" content="0"/>
 
-	<!-- optional javascript: effects.js,jquery.js -->
-	<link href="<c:url value="/styles/global.css"/>" type="text/css" rel="stylesheet">
-
 	<link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet"  media="screen"/>
 	<link href="<c:url value="/css/bootstrap.theme.min.css"/>" rel="stylesheet"  media="screen"/>
 	<script src="<c:url value="/js/jquery.min.js"/>" type="text/javascript"></script>
 	<script src="<c:url value="/js/jquery.cookie.js"/>" type="text/javascript">"></script>
 	<script src="<c:url value="/js/bootstrap.min.js"/>" type="text/javascript"></script>
-	
-	<script src="<c:url value="/js/app.js"/>" type="text/javascript"></script>
 	<script src="<c:url value="/js/underscore.js"/>" type="text/javascript"></script>
-	
 	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
 
 	<!-- multiple-select -->
@@ -34,4 +28,8 @@
 	<script src="<c:url value="/js/jquery.validate/additional-methods.js"/>"></script>
 	<script src="<c:url value="/js/jquery.validate/localization/messages_zh.js"/>"></script>
 	
+	<!-- app -->
+	<script src="<c:url value="/js/rest.js"/>" type="text/javascript"></script>
+	<script src="<c:url value="/js/app.js"/>" type="text/javascript"></script>
+	<link href="<c:url value="/styles/global.css"/>" type="text/css" rel="stylesheet">
 	
