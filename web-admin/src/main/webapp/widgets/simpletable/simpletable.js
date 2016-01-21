@@ -52,7 +52,7 @@ SimpleTable.prototype = {
 		var pair = function(k,v) {return ' <input type="hidden" name="'+k+'" value="'+v+'" />'};
 		var params = pair(this.pageNumberKey,this.pageNumber)+pair(this.pageSizeKey,this.pageSize)+pair(this.sortColumnsKey,this.sortColumns)
 		$('#'+this.form).append(params);
-		SimpleTableUtils.fireSubmit(this.form);
+		$('#'+this.form).submit();
 	},
 	togglePage : function(pageNumber) {
 		this.pageNumber = pageNumber;
@@ -97,21 +97,5 @@ var SimpleTableUtils = {
 			}
 		}
 		return null;
-	},
-	fireSubmit : function(form) {
-		var form = document.getElementById(form);
-	    if (form.fireEvent) { //for ie
-	    	if(form.fireEvent('onsubmit')){
-	    		form.submit();
-	    	}
-	    } else if (document.createEvent) { // for dom level 2
-			var evt = document.createEvent("HTMLEvents");
-	      	//true for can bubble, true for cancelable
-	      	evt.initEvent('submit', false, true); 
-	      	form.dispatchEvent(evt);
-	      	if(navigator.userAgent.indexOf('Chrome') >= 0) {
-	      		form.submit();
-	      	}
-	    }
 	}
 }
