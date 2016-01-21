@@ -54,9 +54,11 @@ function getReferenceForm(elm) {
 $.validator.setDefaults({
     highlight: function(element) {
         $(element).closest('.form-group').addClass('has-error');
+        $(element).closest('.form-group').removeClass('has-success');
     },
     unhighlight: function(element) {
         $(element).closest('.form-group').removeClass('has-error');
+        $(element).closest('.form-group').addClass('has-success');
     },
     errorElement: 'span',
     errorClass: 'help-block',
