@@ -13,7 +13,7 @@ var SimpleTable = function(formId,pageNumber,pageSize,sortColumns,pageNumberKey,
 	
 	//handle sort
 	_this = this;
-	$("#"+formId+" .gridBody th[sortColumn]").click(function() {
+	$("#"+formId+" .table th[sortColumn]").click(function() {
 		//handle click sort header
 		var column = $(this).attr('sortColumn');
 		if(SimpleTableUtils.getSortDirection(sortColumns,column) == 'asc') {
@@ -33,38 +33,36 @@ var SimpleTable = function(formId,pageNumber,pageSize,sortColumns,pageNumberKey,
 	var sortInfos = SimpleTableUtils.getSortInfos(sortColumns);
 	for(var i = 0; i < sortInfos.length; i++) {
 		var info = sortInfos[i];
-		var selector = "#"+formId+' .gridBody th[sortColumn="'+info.column+'"]';
+		var selector = "#"+formId+' .table th[sortColumn="'+info.column+'"]';
 		var order = info.order ? info.order : 'asc';
 		$(selector).addClass("sort " + order.toLowerCase());
 	}
 	
-	//handle highlight on mouseover
-	$("#"+formId+" .gridBody tbody tr").mouseover(function() {
-		$(this).toggleClass('highlight',true);
-	}).mouseout(function() {
-		$(this).toggleClass('highlight',false);
-	});
-	
 };
 SimpleTable.prototype = {
-	doJump : function(pageNumber,pageSize,sortColumns) {
-		//alert("pageNumber:"+pageNumber+" pageSize:"+pageSize+" sortColumns:"+sortColumns+" this.form:"+this.form);
+	doJump : function() {
 		var pair = function(k,v) {return ' <input type="hidden" name="'+k+'" value="'+v+'" />'};
-		var params = pair(this.pageNumberKey,this.pageNumber)+pair(this.pageSizeKey,this.pageSize)+pair(this.sortColumnsKey,this.sortColumns)
+		
+		var params = pair(this.pageNumberKey,this.pageNumber) + 
+			pair(this.pageSizeKey,this.pageSize) + 
+			pair(this.sortColumnsKey,this.sortColumns);
+		
+		//alert("pageNumber:"+this.pageNumber+" pageSize:"+this.pageSize+" sortColumns:"+this.sortColumns+" this.form:"+this.form + "\n" + params);
+		
 		$('#'+this.form).append(params);
 		$('#'+this.form).submit();
 	},
 	togglePage : function(pageNumber) {
 		this.pageNumber = pageNumber;
-		this.doJump(pageNumber,null,null);
+		this.doJump();
 	},
 	togglePageSize : function(pageSize) {
 		this.pageSize = pageSize;
-		this.doJump(null,pageSize,null);
+		this.doJump();
 	},
 	toggleSort : function(sortColumns) {
 		this.sortColumns = sortColumns;
-		this.doJump(null,null,sortColumns);
+		this.doJump();
 	}
 };
 
@@ -87,6 +85,7 @@ var SimpleTableUtils = {
 		}
 		return results;
 	},
+	
 	getSortDirection : function(defaultSortColumns,currentColumn) {
 		var infos = SimpleTableUtils.getSortInfos(defaultSortColumns);
 		for(var i = 0; i < infos.length; i++) {

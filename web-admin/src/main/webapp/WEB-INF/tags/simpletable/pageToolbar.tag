@@ -7,7 +7,7 @@
 
 <%
 	// set default values
-	Integer[] defaultPageSizes = new Integer[]{10,50,100};
+	Integer[] defaultPageSizes = new Integer[]{ 10 , 50 , 100 };
 	if(jspContext.getAttribute("pageSizeSelectList") == null) {
 		jspContext.setAttribute("pageSizeSelectList",defaultPageSizes); 
 	}
@@ -17,48 +17,65 @@
 	} 
 %>
 
-<div class="row col-sm-12" style="margin-top:5px;margin-bottom:5px;">
-		
-	<div  class="pull-left" >
-		<jsp:doBody/>
+
+
+
+<div style="margin-top:5px;margin-bottom:5px;"  class="fixed-table-pagination" style="display: block;">
+	
+	<div class="pull-left pagination-detail">
+		<span class="pagination-info">${paginator.startRow} - ${paginator.endRow} of ${paginator.totalItems}</span>
+		<span class="page-list">
+			<select onChange="simpleTable.togglePageSize(this.value)" class="form-control" style="width:70px;">
+				<c:forEach var="item" items="${pageSizeSelectList}">
+					<option value="${item}" ${paginator.pageSize == item ? 'selected' : '' }>${item}</option>
+				</c:forEach> 
+			</select>
+		</span>
 	</div>
 	
-	<div class="pull-right">
-		<span class="buttonLabel">${paginator.startRow} - ${paginator.endRow} of ${paginator.totalItems}</span>
-		
-		<c:choose>
-		<c:when test="${paginator.firstPage}"><img src="<c:url value='/widgets/simpletable/images/firstPageDisabled.gif'/>" style="border:0" ></c:when>
-		<c:otherwise><a href="javascript:simpleTable.togglePage(1);"><img src="<c:url value='/widgets/simpletable/images/firstPage.gif'/>" style="border:0" ></a></c:otherwise>
-		</c:choose>
-		
-		<c:choose>
-		<c:when test="${paginator.hasPrePage}"><a href="javascript:simpleTable.togglePage(${paginator.prePage});"><img src="<c:url value='/widgets/simpletable/images/prevPage.gif'/>" style="border:0" ></a></c:when>
-		<c:otherwise><img src="<c:url value='/widgets/simpletable/images/prevPageDisabled.gif'/>" style="border:0" ></c:otherwise>
-		</c:choose>
-		
-		<c:forEach var="item" items="${paginator.slider}">
-		<c:choose>
-		<c:when test="${item == paginator.page}">[${item}]</c:when>
-		<c:otherwise><a href="javascript:simpleTable.togglePage(${item});">[${item}]</a></c:otherwise>
-		</c:choose>
+	<div class="pull-right pagination">
+	  <ul class="pagination ">
+	  	
+	  	<!-- firstPage -->
+	  	<li class="${paginator.firstPage ? 'disabled' : ''}">
+	      <a aria-label="firstPage" href="javascript:simpleTable.togglePage(1);">
+	        <span aria-hidden="true">|&laquo;</span>
+	      </a>
+	    </li>
+	    
+	    <!-- prePage -->
+	    <li class="${paginator.hasPrePage ? '' : 'disabled'}">
+	      <a aria-label="Previous" href="javascript:simpleTable.togglePage(${paginator.prePage});">
+	        <span aria-hidden="true">&laquo;</span>
+	      </a>
+	    </li>
+	    
+	    <!-- page -->
+	    <c:forEach var="item" items="${paginator.slider}">
+	    	<li class="${item == paginator.page ? 'active' : ''}">
+				<c:choose>
+				<c:when test="${item == paginator.page}"><a href="#">${item}</a></c:when>
+				<c:otherwise><a href="javascript:simpleTable.togglePage(${item});">${item}</a></c:otherwise>
+				</c:choose>
+	    	</li>
 		</c:forEach>
 		
-		<c:choose>
-		<c:when test="${paginator.hasNextPage}"><a href="javascript:simpleTable.togglePage(${paginator.nextPage});"><img src="<c:url value='/widgets/simpletable/images/nextPage.gif'/>" style="border:0" ></a></c:when>
-		<c:otherwise><img src="<c:url value='/widgets/simpletable/images/nextPageDisabled.gif'/>" style="border:0" ></c:otherwise>
-		</c:choose>
+		<!-- nextPage -->
+	    <li class="${paginator.hasNextPage ? '' : 'disabled'}">
+	      <a aria-label="Next" href="javascript:simpleTable.togglePage(${paginator.nextPage});">
+	        <span aria-hidden="true">&raquo;</span>
+	      </a>
+	    </li>
+	    
+	    <!-- lastPage -->
+	    <li class="${paginator.lastPage ? 'disabled' : ''}">
+	      <a aria-label="lastPage" href="javascript:simpleTable.togglePage(${paginator.totalPages});">
+	        <span aria-hidden="true">&raquo;|</span>
+	      </a>
+	    </li>
 		
-		<c:choose>
-		<c:when test="${paginator.lastPage}"><img src="<c:url value='/widgets/simpletable/images/lastPageDisabled.gif'/>" style="border:0"></c:when>
-		<c:otherwise><a href="javascript:simpleTable.togglePage(${paginator.totalPages});"><img src="<c:url value='/widgets/simpletable/images/lastPage.gif'/>" style="border:0" ></a></c:otherwise>
-		</c:choose>
-		
-		<c:if test="${isShowPageSizeList}">
-		<select onChange="simpleTable.togglePageSize(this.value)">
-			<c:forEach var="item" items="${pageSizeSelectList}">
-				<option value="${item}" ${paginator.pageSize == item ? 'selected' : '' }>${item}</option>
-			</c:forEach> 
-		</select>
-		</c:if>
-	</div>
+	  </ul>
+	<div>
+	
+	
 </div>
