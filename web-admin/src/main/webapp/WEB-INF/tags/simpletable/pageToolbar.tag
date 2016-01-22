@@ -20,7 +20,7 @@
 
 
 
-<div style="margin-top:5px;margin-bottom:5px;"  class="fixed-table-pagination" style="display: block;">
+<div class="fixed-table-pagination" style="display: block;">
 	
 	<div class="pull-left pagination-detail">
 		<span class="pagination-info">${paginator.startRow} - ${paginator.endRow} of ${paginator.totalItems}</span>
