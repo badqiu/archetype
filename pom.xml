@@ -12,7 +12,6 @@
 	<module>dao</module>
 	<module>core-service</module>
     <module>service</module>
-	<module>scheduler</module>
     <module>web-admin</module>
 	<module>web-home</module>
 	<module>webservice-server</module>
