@@ -32,6 +32,8 @@
 	<script src="${ctx}/js/jquery.validate/additional-methods.js"></script>
 	<script src="${ctx}/js/jquery.validate/localization/messages_zh.js"></script>
 	
+	<script src="${ctx}/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+	
 	<!-- app -->
 	<script src="${ctx}/js/rest.js" ></script>
 	<script src="${ctx}/js/app.js" ></script>
