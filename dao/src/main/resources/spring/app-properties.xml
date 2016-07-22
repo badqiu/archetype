@@ -15,7 +15,7 @@
 	   default-autowire="byName" default-lazy-init="false">
 
     <!-- 应用属性文件读入 -->
-    <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+    <bean id="appProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
     	<property name="ignoreResourceNotFound" value="true" />
 		<property name="locations">
 			<list>
@@ -35,7 +35,7 @@
 	<!-- PropertyPlaceholderConfigurer,用于spring ${placeholder}的解析 -->
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
-		<property name="properties" ref="applicationProperties"/>
+		<property name="properties" ref="appProperties"/>
 	</bean>
 
 </beans>
