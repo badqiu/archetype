@@ -271,7 +271,11 @@
 		<%@ include file="/commons/messages.jsp"  %>
 		<rapid:block name="content"/>
     </div>
-	
+
+	<script>
+		$(".switch").bootstrapSwitch();
+	</script>
+		
 </body>
 
 </html>

@@ -14,6 +14,10 @@
 	<script src="<c:url value="/js/underscore.js"/>" type="text/javascript"></script>
 	<script src="<c:url value="/js/My97DatePicker/WdatePicker.js"/>" type="text/javascript"></script>
 
+	<!-- bootstrap switch -->
+	<script src="${ctx}/js/bootstrap-switch.min.js"></script>
+	<link href="${ctx}/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet"/>
+	
 	<!-- multiple-select -->
 	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
 	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>

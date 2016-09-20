@@ -14,7 +14,11 @@
 	<!-- bootstrap -->
 	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
 	<script src="${ctx}/js/bootstrap.min.js"></script>
-	
+
+	<!-- bootstrap switch -->
+	<script src="${ctx}/js/bootstrap-switch.min.js"></script>
+	<link href="${ctx}/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet"/>
+		
 	<!-- multiple-select -->
 	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
 	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>
@@ -271,6 +275,10 @@
 		<%@ include file="/commons/messages.jsp"  %>
 		<rapid:block name="content"/>
     </div>
+	
+	<script>
+		$(".switch").bootstrapSwitch();
+	</script>
 	
 </body>
 

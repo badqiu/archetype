@@ -28,6 +28,7 @@ echo "before exec: mvn eclipse:eclipse "
 echo ----------------------------------------------
 pause
 call mvn eclipse:eclipse
+call mvn package
 
 REM -----------------------------------------------
 REM mvn archetype:generate -DarchetypeCatalog=local
