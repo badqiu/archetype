@@ -14,4 +14,9 @@ public interface HelloWorldWebService {
 	 */
 	public String echo(HelloDTO bean);
 	
+	/**
+	 * 调用示例: http://localhost:6060/rpc/HelloWorldWebService/ping
+	 */
+	public String ping();
+	
 }

@@ -20,4 +20,9 @@ public class HelloWorldWebServiceImpl implements HelloWorldWebService{
 		return bean.toString();
 	}
 
+	@Override
+	public String ping() {
+		return "PONG";
+	}
+
 }
