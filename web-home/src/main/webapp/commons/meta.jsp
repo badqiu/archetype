@@ -5,6 +5,7 @@
 	<meta http-equiv="Cache-Control" content="no-store"/>
 	<meta http-equiv="Pragma" content="no-cache"/>
 	<meta http-equiv="Expires" content="0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet"  media="screen"/>
 	<link href="<c:url value="/css/bootstrap.theme.min.css"/>" rel="stylesheet"  media="screen"/>

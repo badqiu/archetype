@@ -28,7 +28,7 @@ echo "before exec: mvn eclipse:eclipse "
 echo ----------------------------------------------
 pause
 call mvn eclipse:eclipse
-call mvn package
+call mvn package -Dmaven.test.skip=true
 
 REM -----------------------------------------------
 REM mvn archetype:generate -DarchetypeCatalog=local
