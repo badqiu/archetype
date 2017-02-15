@@ -23,6 +23,7 @@
 	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
 	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>
 	
+	<!-- menu -->
 	<script src="${ctx}/js/metisMenu/metisMenu.js"></script>
 	<link href="${ctx}/js/metisMenu/metisMenu.css" rel="stylesheet"  media="screen"/>
 	
@@ -36,12 +37,20 @@
 	<script src="${ctx}/js/jquery.validate/additional-methods.js"></script>
 	<script src="${ctx}/js/jquery.validate/localization/messages_zh.js"></script>
 	
+	<!-- date control -->
 	<script src="${ctx}/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 	
 	<!-- app -->
 	<script src="${ctx}/js/rest.js" ></script>
 	<script src="${ctx}/js/app.js" ></script>
 	<script src="${ctx}/js/app_config.js" ></script>
+	
+	<!-- vue -->
+	<script src="${ctx}/js/vue/ext/AppUtil.js" ></script>
+	<script src="${ctx}/js/vue/ext/simplepagination.vue.js" type="text/javascript"></script>
+	<script src="${ctx}/js/vue/ext/CommonViews.vue.js" type="text/javascript"></script>
+	<script src="${ctx}/js/vue/ext/vue-moment.min.js" type="text/javascript"></script>
+	
 	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
 	<rapid:block name="head">
