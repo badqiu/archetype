@@ -41,6 +41,7 @@
 	<!-- app -->
 	<script src="${ctx}/js/rest.js" ></script>
 	<script src="${ctx}/js/app.js" ></script>
+	<script src="${ctx}/js/app_config.js" ></script>
 	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
 	<rapid:block name="head">

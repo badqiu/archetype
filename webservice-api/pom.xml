@@ -11,8 +11,11 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
-
-
+		<dependency>
+			<groupId>com.company.project</groupId>
+			<artifactId>demoproject-model</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	
 </project>
