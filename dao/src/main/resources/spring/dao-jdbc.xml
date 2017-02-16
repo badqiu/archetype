@@ -20,9 +20,7 @@
 	<tx:annotation-driven transaction-manager="demoprojectTransactionManager" proxy-target-class="true"/>
 
     <!-- component-scan自动搜索@Component , @Controller , @Service , @Repository等标注的类 -->
-    <!-- 
 	<context:component-scan base-package="com.company.project.**.dao"/>
-     -->
 
 	<!-- 用于子dao继承,以便配置不同数据源 -->
 	<bean id="demoprojectDaoParent" abstract="true">
