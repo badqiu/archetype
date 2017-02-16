@@ -61,3 +61,6 @@
 	
 	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
 	
+	<!-- fa icons css, full icons see: http://fontawesome.io/icons/ -->
+	<link href="${ctx}/css/fontawesome/font-awesome.css" type="text/css" rel="stylesheet">
+	
