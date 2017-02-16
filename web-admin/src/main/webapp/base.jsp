@@ -3,55 +3,7 @@
 
 <html>
 <head>
-	<!-- jquery -->
-	<script src="${ctx}/js/jquery.min.js"></script>
-	<script src="${ctx}/js/jquery.cookie.js"></script>
-	
-	<!-- simpletable -->
-	<link href="${ctx}/widgets/simpletable/simpletable.css" type="text/css" rel="stylesheet">
-	<script  src="${ctx}/widgets/simpletable/simpletable.js" type="text/javascript"></script>
-	
-	<!-- bootstrap -->
-	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
-	<script src="${ctx}/js/bootstrap.min.js"></script>
-
-	<!-- bootstrap switch -->
-	<script src="${ctx}/js/bootstrap-switch.min.js"></script>
-	<link href="${ctx}/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet"/>
-		
-	<!-- multiple-select -->
-	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
-	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>
-	
-	<!-- menu -->
-	<script src="${ctx}/js/metisMenu/metisMenu.js"></script>
-	<link href="${ctx}/js/metisMenu/metisMenu.css" rel="stylesheet"  media="screen"/>
-	
-	<!-- fileinput -->
-	<script src="${ctx}/js/fileinput.js"></script>
-	<script src="${ctx}/js/fileinput_locale_zh.js"></script>
-	<link href="${ctx}/css/fileinput.css" rel="stylesheet"  media="screen"/>
-	
-	<!-- jquery.validate doc: http://jqueryvalidation.org/ -->
-	<script src="${ctx}/js/jquery.validate/jquery.validate.js"></script>
-	<script src="${ctx}/js/jquery.validate/additional-methods.js"></script>
-	<script src="${ctx}/js/jquery.validate/localization/messages_zh.js"></script>
-	
-	<!-- date control -->
-	<script src="${ctx}/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-	
-	<!-- app -->
-	<script src="${ctx}/js/rest.js" ></script>
-	<script src="${ctx}/js/app.js" ></script>
-	<script src="${ctx}/js/app_config.js" ></script>
-	
-	<!-- vue -->
-	<script src="${ctx}/js/vue/ext/AppUtil.js" ></script>
-	<script src="${ctx}/js/vue/ext/simplepagination.vue.js" type="text/javascript"></script>
-	<script src="${ctx}/js/vue/ext/CommonViews.vue.js" type="text/javascript"></script>
-	<script src="${ctx}/js/vue/ext/vue-moment.min.js" type="text/javascript"></script>
-	
-	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
+	<%@ include file="/commons/meta.jsp" %>
 	
 	<rapid:block name="head">
 	</rapid:block>
@@ -243,8 +195,6 @@
 
 <body>
 	
-	
-    
 	<nav class="navbar navbar-inverse sidebar" role="navigation">
     	<div class="container-fluid">
     		<!-- Brand and toggle get grouped for better mobile display -->
