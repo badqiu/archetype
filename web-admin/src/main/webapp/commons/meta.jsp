@@ -10,7 +10,11 @@
 	<!-- jquery -->
 	<script src="${ctx}/js/jquery.min.js"></script>
 	<script src="${ctx}/js/jquery.cookie.js"></script>
-	
+	<!-- date format -->
+	<script src="${ctx}/moment.min.js" type="text/javascript"></script>
+	<!-- util -->
+	<script src="${ctx}/underscore.js" type="text/javascript"></script>
+		
 	<!-- simpletable -->
 	<link href="${ctx}/widgets/simpletable/simpletable.css" type="text/css" rel="stylesheet">
 	<script  src="${ctx}/widgets/simpletable/simpletable.js" type="text/javascript"></script>
@@ -45,11 +49,11 @@
 	<script src="${ctx}/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 	
 	<!-- app -->
-	<script src="${ctx}/js/rest.js" ></script>
 	<script src="${ctx}/js/app.js" ></script>
 	<script src="${ctx}/js/app_config.js" ></script>
 	
 	<!-- vue -->
+	<script src="${ctx}/js/vue/vue.min.js" ></script>
 	<script src="${ctx}/js/vue/ext/AppUtil.js" ></script>
 	<script src="${ctx}/js/vue/ext/simplepagination.vue.js" type="text/javascript"></script>
 	<script src="${ctx}/js/vue/ext/CommonViews.vue.js" type="text/javascript"></script>
