@@ -11,16 +11,16 @@
 	<script src="${ctx}/js/jquery.min.js"></script>
 	<script src="${ctx}/js/jquery.cookie.js"></script>
 	<!-- date format -->
-	<script src="${ctx}/moment.min.js" type="text/javascript"></script>
+	<script src="${ctx}/js/moment.min.js" type="text/javascript"></script>
 	<!-- util -->
-	<script src="${ctx}/underscore.js" type="text/javascript"></script>
+	<script src="${ctx}/js/underscore.js" type="text/javascript"></script>
 		
 	<!-- simpletable -->
 	<link href="${ctx}/widgets/simpletable/simpletable.css" type="text/css" rel="stylesheet">
 	<script  src="${ctx}/widgets/simpletable/simpletable.js" type="text/javascript"></script>
 	
 	<!-- bootstrap -->
-	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
+	<link href="${ctx}/css/bootstrap-united.min.css" rel="stylesheet"  media="screen"/>
 	<script src="${ctx}/js/bootstrap.min.js"></script>
 
 	<!-- bootstrap switch -->
