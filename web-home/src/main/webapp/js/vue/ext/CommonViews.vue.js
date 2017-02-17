@@ -2,7 +2,7 @@ Vue.component('submit-dialog', {
   props: ['id','title','submitText'],
   template: multiline(function() {
 	  /*
-	  <div class='modal fade ' tabindex='-1' role='dialog' :id='id'>
+	  <div class='modal fade submit-dialog' tabindex='-1' role='dialog' :id='id'>
 		  <div class='modal-dialog' style='width:1200px;' >
 		    <div class='modal-content' >
 		    
