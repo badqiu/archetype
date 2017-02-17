@@ -16,8 +16,8 @@
 	<script src="${ctx}/js/underscore.js" type="text/javascript"></script>
 		
 	<!-- simpletable -->
-	<link href="${ctx}/widgets/simpletable/simpletable.css" type="text/css" rel="stylesheet">
-	<script  src="${ctx}/widgets/simpletable/simpletable.js" type="text/javascript"></script>
+	<link href="${ctx}/js/simpletable/simpletable.css" type="text/css" rel="stylesheet">
+	<script  src="${ctx}/js/simpletable/simpletable.js" type="text/javascript"></script>
 	
 	<!-- bootstrap -->
 	<link href="${ctx}/css/bootstrap-united.min.css" rel="stylesheet"  media="screen"/>

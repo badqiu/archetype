@@ -16,11 +16,11 @@
 	<script src="${ctx}/js/underscore.js" type="text/javascript"></script>
 		
 	<!-- simpletable -->
-	<link href="${ctx}/widgets/simpletable/simpletable.css" type="text/css" rel="stylesheet">
-	<script  src="${ctx}/widgets/simpletable/simpletable.js" type="text/javascript"></script>
+	<link href="${ctx}/js/simpletable/simpletable.css" type="text/css" rel="stylesheet">
+	<script  src="${ctx}/js/simpletable/simpletable.js" type="text/javascript"></script>
 	
 	<!-- bootstrap -->
-	<link href="${ctx}/css/bootstrap.min.css" rel="stylesheet"  media="screen"/>
+	<link href="${ctx}/css/bootstrap-united.min.css" rel="stylesheet"  media="screen"/>
 	<script src="${ctx}/js/bootstrap.min.js"></script>
 
 	<!-- bootstrap switch -->
@@ -60,4 +60,7 @@
 	<script src="${ctx}/js/vue/ext/vue-moment.min.js" type="text/javascript"></script>
 	
 	<link href="${ctx}/css/global.css" type="text/css" rel="stylesheet">
+	
+	<!-- fa icons css, full icons see: http://fontawesome.io/icons/ -->
+	<link href="${ctx}/css/fontawesome/font-awesome.css" type="text/css" rel="stylesheet">
 	
