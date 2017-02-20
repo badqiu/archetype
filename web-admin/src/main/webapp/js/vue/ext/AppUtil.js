@@ -54,6 +54,23 @@ var AppUtil = {
 			return JSON.parse(json);
 		}
 		return defaultValue ? defaultValue : null;
+	},
+	
+	toSelect2Options : function(rows,optionKey,optionLabel) {
+		var result = [];
+		for(var i = 0; i < rows.length; i++) {
+			var row = rows[i];
+			var option = {
+					//select2
+					text:row[optionLabel],
+					id:row[optionKey],
+					//vue select
+					label:row[optionLabel],
+					value:row[optionKey]
+			};
+			result.push(option);
+		}
+		return result;
 	}
 }
 
