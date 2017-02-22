@@ -1,7 +1,7 @@
 Vue.component('submit-dialog', {
   props: ['id','title','submitText'],
   template: multiline(function() {
-	  /*
+	  /*!@preserve
 	  <div class='modal fade submit-dialog ' tabindex='-1' role='dialog' :id='id'>
 		  <div class='modal-dialog' style='width:1200px;' >
 		    <div class='modal-content' >
@@ -38,7 +38,7 @@ Vue.component('submit-dialog', {
 Vue.component('select2', {
 	  props: ['config', 'value','id','name',"clazz"],
 	  template: multiline(function() {
-		  /*
+		  /*!@preserve
 			<select :id="id" class="form-control select2" style="width:100%" >
 	    		<slot></slot>
 	  		</select>   

@@ -13,7 +13,8 @@ Vue.component('simplepagination',{
 			this.$emit('changepagesize',this.paginator.pageSize);
 		}
 	},
-	template: multiline(function() {/*
+	template: multiline(function() {
+		/*!@preserve
 		<div class="fixed-table-pagination" >
 			
 			<div class="pull-left pagination-detail">
