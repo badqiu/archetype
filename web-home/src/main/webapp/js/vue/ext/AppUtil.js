@@ -96,7 +96,7 @@ $.jsonp = function(url,data,success,dataType) {
 		url: jsonpUrl,
 		data: data,
 		success: success,
-		method:"post",
+		type:"post",
 		dataType: "jsonp",
 		jsonp: "__jsoncallback"
 	});
