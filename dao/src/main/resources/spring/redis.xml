@@ -17,7 +17,7 @@
 		<property name="jedisPool">
 			<bean class="com.github.rapid.common.redis.JedisPoolFactoryBean">
 				<property name="poolConfig" ref="redisPoolConfig" />
-				<property name="server" value="${redis_server_demoproject}" />
+				<property name="server" value="${demoproject_redis_server}" />
 			</bean>
 		</property>
 	</bean>
