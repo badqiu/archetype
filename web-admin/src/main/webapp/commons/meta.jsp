@@ -31,6 +31,11 @@
 	<script src="${ctx}/js/multiple-select/jquery.multiple.select.js"></script>
 	<link href="${ctx}/js/multiple-select/multiple-select.css" rel="stylesheet"  media="screen"/>
 	
+	<!-- select2 -->
+	<link href="${ctx}/js/select2/select2.min.css" rel="stylesheet" />
+	<link href="${ctx}/js/select2/select2-bootstrap.css" rel="stylesheet" />
+	<script src="${ctx}/js/select2/select2.min.js"></script>
+	
 	<!-- menu -->
 	<script src="${ctx}/js/metisMenu/metisMenu.js"></script>
 	<link href="${ctx}/js/metisMenu/metisMenu.css" rel="stylesheet"  media="screen"/>
