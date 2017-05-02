@@ -1,12 +1,17 @@
 package com.company.project.common.springmvc.interceptor;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -66,9 +71,9 @@ public class SharedRenderVariableInterceptor extends HandlerInterceptorAdapter i
 		globalRenderVariables.put("img_url_prefix", "http://img.rapid-framework.org.cn");
 		globalRenderVariables.put("media_url_prefix", "http://media.rapid-framework.org.cn");
 		globalRenderVariables.put("static_url_prefix", "http://static.rapid-framework.org.cn");
+		globalRenderVariables.put("war_version",getClass().getPackage().getImplementationVersion());
 		
 		//也可以存放一些共享的工具类,以便视图使用,如StringUtils
-		
 	}
 	
 	//在系统启动时会执行

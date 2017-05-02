@@ -65,6 +65,7 @@ public class SharedRenderVariableInterceptor extends HandlerInterceptorAdapter i
 		globalRenderVariables.put("img_url_prefix", "http://img.rapid-framework.org.cn");
 		globalRenderVariables.put("media_url_prefix", "http://media.rapid-framework.org.cn");
 		globalRenderVariables.put("static_url_prefix", "http://static.rapid-framework.org.cn");
+		globalRenderVariables.put("war_version",getClass().getPackage().getImplementationVersion());
 		
 		//也可以存放一些共享的工具类,以便视图使用,如StringUtils
 		
