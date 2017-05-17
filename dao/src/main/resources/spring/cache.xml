@@ -18,20 +18,14 @@
            "
 	   default-autowire="byName" default-lazy-init="false">
 
-	<description>缓存配置</description>
-
 	<!-- 
 	   激活缓存: @Cacheable,@CachePut,@CacheEvict,@CacheConfig 及
 	 JSR-107 @CacheResult,@CachePut,@CacheRemove,@CacheRemoveAll,@CacheDefaults 
 	 -->
 	<cache:annotation-driven />
 	
-	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
-	    <property name="caches">
-	        <set>
-	            <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" name="some_cache_name"/>
-	        </set>
-	    </property>
+	<bean id="cacheManager" class="org.springframework.cache.concurrent.ConcurrentMapCacheManager">
 	</bean>
+
 	
 </beans>
