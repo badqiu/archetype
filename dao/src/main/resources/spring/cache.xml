@@ -18,19 +18,20 @@
            "
 	   default-autowire="byName" default-lazy-init="false">
 
-	<description>
-		配置激活spring的annotation
-	</description>
-	
-	<!--  激活 @Required @Autowired,JSR 250's @PostConstruct, @PreDestroy and @Resource 等标注 -->
-	<context:annotation-config />
-	
-	<!--  激活 @Scheduled @Async等annotation -->
-	<task:annotation-driven/>
-	
-	
-	<!-- 支持 @AspectJ 标记
-		<aop:aspectj-autoproxy/>
-	-->
+	<description>缓存配置</description>
 
+	<!-- 
+	   激活缓存: @Cacheable,@CachePut,@CacheEvict,@CacheConfig 及
+	 JSR-107 @CacheResult,@CachePut,@CacheRemove,@CacheRemoveAll,@CacheDefaults 
+	 -->
+	<cache:annotation-driven />
+	
+	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+	    <property name="caches">
+	        <set>
+	            <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" name="some_cache_name"/>
+	        </set>
+	    </property>
+	</bean>
+	
 </beans>
