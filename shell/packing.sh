@@ -7,7 +7,7 @@ SELF_DIR=`dirname $SELF`
 DWPROJECTNO="demoproject"
 
 #build file name
-BUILD_FILE_NAME="${DWPROJECTNO}-`date +%Y%m%d-%H%M`.tgz"
+BUILD_FILE_NAME="${DWPROJECTNO}-`date +%Y%m%d-%H%M`.tar.gz"
 
 
 #clean old build
@@ -72,6 +72,6 @@ chmod 755 -R /data/release/${DWPROJECTNO}/work/
 cd /data/release/${DWPROJECTNO}/work/
 tar -zcf ${BUILD_FILE_NAME} *
 mv -i ${BUILD_FILE_NAME} /data/release/${DWPROJECTNO}/dist/
-cp -f /data/release/${DWPROJECTNO}/dist/${BUILD_FILE_NAME} /data/release/${DWPROJECTNO}/dist/${DWPROJECTNO}.tgz
+cp -f /data/release/${DWPROJECTNO}/dist/${BUILD_FILE_NAME} /data/release/${DWPROJECTNO}/dist/${DWPROJECTNO}.tar.gz
 echo "==============================***  Packing Done ***======================================="
 

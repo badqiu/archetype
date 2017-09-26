@@ -72,12 +72,12 @@ fi
 
 ## deploy 
 function_deploy(){
-	if [ -f "$bak_project_dir/$DWPROJECTNO.tgz" ];then
+	if [ -f "$bak_project_dir/$DWPROJECTNO.tar.gz" ];then
 		rm -rf $app_dir/$DWPROJECTNO/*
 		cd $app_dir/$DWPROJECTNO
-		tar xzf $bak_project_dir/$DWPROJECTNO.tgz
+		tar xzf $bak_project_dir/$DWPROJECTNO.tar.gz
 	else
-		echo "$bak_project/$DWPROJECTNO.tgz not exists!"
+		echo "$bak_project/$DWPROJECTNO.tar.gz not exists!"
 		exit 1
 	fi
 }
@@ -86,9 +86,9 @@ function_deploy(){
 function_backup(){
         if [ -d $app_dir/$DWPROJECTNO ];then
                 cd $app_dir
-		tar czf $DWPROJECTNO.lastest.tgz $DWPROJECTNO
-                mv $app_dir/$DWPROJECTNO.lastest.tgz $bak_project_dir/$DWPROJECTNO.lastest.tgz
-                cp $bak_project_dir/$DWPROJECTNO.lastest.tgz $bak_project_dir/$bak_time.$DWPROJECTNO.tgz
+		tar czf $DWPROJECTNO.lastest.tar.gz $DWPROJECTNO
+                mv $app_dir/$DWPROJECTNO.lastest.tar.gz $bak_project_dir/$DWPROJECTNO.lastest.tar.gz
+                cp $bak_project_dir/$DWPROJECTNO.lastest.tar.gz $bak_project_dir/$bak_time.$DWPROJECTNO.tar.gz
 	else
 		echo "Local directory $app_dir/$DWPROJECTNO not exists!"
 		return 1
@@ -98,15 +98,15 @@ function_backup(){
 
 ## restore  /data/app/$DWPROJECTNO lastest version
 function_restore(){
-	if [ -f $bak_project_dir/$DWPROJECTNO.lastest.tgz ];then
+	if [ -f $bak_project_dir/$DWPROJECTNO.lastest.tar.gz ];then
         	cd $app_dir
-		tar czf backup_before_restore.$DWPROJECTNO.$bak_time.tgz $DWPROJECTNO
-		mv backup_before_restore.$DWPROJECTNO.$bak_time.tgz $bak_project_dir
+		tar czf backup_before_restore.$DWPROJECTNO.$bak_time.tar.gz $DWPROJECTNO
+		mv backup_before_restore.$DWPROJECTNO.$bak_time.tar.gz $bak_project_dir
 		rm -rf $DWPROJECTNO/*
-		###echo "tar xzf  $bak_project_dir/$DWPROJECTNO.lastest.tgz"
-		tar xzf  $bak_project_dir/$DWPROJECTNO.lastest.tgz
+		###echo "tar xzf  $bak_project_dir/$DWPROJECTNO.lastest.tar.gz"
+		tar xzf  $bak_project_dir/$DWPROJECTNO.lastest.tar.gz
 	else
-		echo "$bak_project_dir/$DWPROJECTNO.lastest.tgz not exist!"
+		echo "$bak_project_dir/$DWPROJECTNO.lastest.tar.gz not exist!"
 		exit 1
 	fi
 }
@@ -138,11 +138,11 @@ case "$1" in
                 	fi
 		else
 			log_end_msg 1
-			log_failure_msg "Please check $DWPROJECTNO.lastest.tgz is exists or not"
+			log_failure_msg "Please check $DWPROJECTNO.lastest.tar.gz is exists or not"
 		fi
                 ;;
 	rsync)
-		log_daemon_msg "Rsync remote file: $bak_project_dir/$DWPROJECTNO.tgz" "rsync from $rsync_server"
+		log_daemon_msg "Rsync remote file: $bak_project_dir/$DWPROJECTNO.tar.gz" "rsync from $rsync_server"
 		function_sync >> /dev/null
                 if [ $? -eq 0 ];then
                         log_end_msg 0
@@ -168,7 +168,7 @@ case "$1" in
                         log_end_msg 0
                 else
                         log_end_msg 1
-                        log_failure_msg "Please check $app_dir/$DWPROJECTNO.lastest.tgz exist or not !!"
+                        log_failure_msg "Please check $app_dir/$DWPROJECTNO.lastest.tar.gz exist or not !!"
                 fi
                 ;;
         *)
