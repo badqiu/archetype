@@ -724,7 +724,14 @@
 			<plugin>
 			  <groupId>org.apache.maven.plugins</groupId>
 			  <artifactId>maven-javadoc-plugin</artifactId>
-			  <version>2.7</version>
+			  <version>2.9.1</version>
+			  <configuration>
+					<reportOutputDirectory>./web-admin/src/main/webapp/javadoc</reportOutputDirectory>
+			        <destDir>all</destDir>
+			        <aggregate>true</aggregate>
+			        <failOnError>false</failOnError>
+                    <doclint>none</doclint>
+			  </configuration>
 			</plugin>				
 
 			<!-- dependency plugin -->
