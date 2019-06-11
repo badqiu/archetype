@@ -23,13 +23,6 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		
-		<!-- project dependency -->
-		<dependency>
-			<groupId>com.company.project</groupId>
-			<artifactId>demoproject-core-service</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		
 		<!-- test BEGIN -->
 		<dependency>
 			<groupId>org.dbunit</groupId>

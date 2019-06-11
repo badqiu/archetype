@@ -10,7 +10,6 @@
     <module>util</module>
 	<module>model</module>
 	<module>dao</module>
-	<module>core-service</module>
     <module>service</module>
     <module>web-admin</module>
 	<module>web-home</module>
