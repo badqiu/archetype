@@ -15,35 +15,30 @@
 	   default-autowire="byName" default-lazy-init="false">
 
 	<!-- parent 数据源,用于子数据源继承 -->
-	<bean id="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" abstract="true">
-        <property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="autoCommitOnClose" value="false" />
-		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
-		<property name="acquireIncrement" value="5" />
-		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
-		<property name="acquireRetryAttempts" value="30" />
-		<!--两次连接中间隔时间，单位毫秒。Default: 1000 -->
-		<property name="acquireRetryDelay" value="1000" />
-		<!-- 当连接池用完时客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException,如设为0则无限期等待。单位毫秒。Default:0 -->
-		<property name="checkoutTimeout" value="30000" />
-		<property name="maxStatements" value="0"/>
-		<!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。 Default: 3 -->
-		<property name="initialPoolSize" value="10" />
-		<!-- 最小连接数 -->
-		<property name="minPoolSize" value="5" />
-		<!--连接池中保留的最大连接数。Default: 15 -->
-		<property name="maxPoolSize" value="100" />
-		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
-		<property name="maxIdleTime" value="60" />
-		<!--How long to hang on to excess unused connections after traffic spike-->
-		<property name="maxIdleTimeExcessConnections" value="600" />
+	<bean id="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close" abstract="true">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+
+		<property name="initialSize" value="2" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="20" />
+		
+		<property name="validationQuery" value="SELECT 1" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+		<!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+		<property name="filters" value="stat" />
 	</bean>
 		   
 	<!-- 数据源定义 -->
 	<bean id="demoprojectDataSource" parent="parentDataSource">
-		<property name="jdbcUrl" value="${demoproject_jdbc_url}"/>
-		<property name="user" value="${demoproject_jdbc_user}"/>
-		<property name="password" value="${demoproject_jdbc_password}"/>		
+		<property name="url" value="${demoproject_jdbc_url}"/>
+		<property name="username" value="${demoproject_jdbc_user}"/>
+		<property name="password" value="${demoproject_jdbc_password}"/>
 	</bean>
 	
 	<!-- 
