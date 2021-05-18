@@ -30,7 +30,7 @@
 		<shiro.version>1.2.4</shiro.version>
 		<guava.version>18.0</guava.version>
 		<powermock.version>1.6.2</powermock.version>
-		<xstream.version>1.4.8</xstream.version>
+		<xstream.version>1.4.17</xstream.version>
 		
 		<!-- propect properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
