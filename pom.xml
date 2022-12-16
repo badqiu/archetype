@@ -21,7 +21,7 @@
 
 	<properties>
 		<!-- versions -->
-		<spring.version>4.3.18.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<jetty.version>8.1.16.v20140903</jetty.version>
 		<h2.version>1.4.189</h2.version>
 		<jackson.version>1.9.13</jackson.version>
